@@ -12,6 +12,19 @@ jsproxy_config({
 
   // 节点配置
   node_map: {
+    'demo-1': {
+      label: 'demo-1',
+      lines: {
+        // 主机:权重
+        'blue-moon-8c65.kclds4.workers.dev': 1,
+      }
+    },
+    'demo-2': {
+      label: 'demo-2',
+      lines: {
+        'fragrant-firefly-d0a5.foikst.workers.dev': 1,
+      },
+    },
     'mysite': {
       label: '当前站点',
       lines: {
@@ -20,7 +33,7 @@ jsproxy_config({
     },
     // 该节点用于加载大体积的静态资源
     'cfworker': {
-      label: '其他站点',
+      label: '',
       hidden: true,
       lines: {
         // 收费版（高权重）
@@ -28,8 +41,8 @@ jsproxy_config({
 
         // 免费版（低权重，分摊一些成本）
         // 每个账号每天 10 万次免费请求，但有频率限制
-          'blue-moon-8c65.kclds4.workers.dev': 1,
-          'fragrant-firefly-d0a5.foikst.workers.dev': 1,
+        //'': 1,
+        //'': 1,
         //'b.lulu.workers.dev': 1,
         //'b.jsproxy.workers.dev': 1,
       }
